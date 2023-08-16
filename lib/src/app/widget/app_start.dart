@@ -10,7 +10,23 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 class AppStart {
   const AppStart._();
   static Future<ProviderContainer> init() async {
-    WidgetsFlutterBinding.ensureInitialized();
+    final binding = WidgetsFlutterBinding.ensureInitialized();
+    // Cache images in assets folder via using the Flutter Engine binding
+    // lifecycle.
+    binding.deferFirstFrame();
+    binding.addPostFrameCallback((_) {
+      final Element? context = binding.rootElement;
+      if (context != null) {
+        // for (final asset in assetList) {
+        //   precacheImage(
+        //     AssetImage(asset),
+        //     context,
+        //   );
+        // }
+      }
+      binding.allowFirstFrame();
+    });
+
     final container = ProviderContainer(
       overrides: [],
       observers: [
