@@ -23,12 +23,17 @@ FirebaseAuth firebaseAuth(FirebaseAuthRef ref) => FirebaseAuth.instance;
 @Riverpod(keepAlive: true)
 FirebaseFirestore firestore(FirestoreRef ref) => FirebaseFirestore.instance;
 
+// @Riverpod(keepAlive: true)
+// Stream<ConnectivityResult> networkState(NetworkStateRef ref) =>
+//     Connectivity().onConnectivityChanged;
+
 // final sharedPreferencesProvider =
 //     FutureProvider((ref) => SharedPreferences.getInstance());
 
 Future<void> initProviders(ProviderContainer container) async {
   await container.read(sharedPreferenceProvider.future);
   await container.read(objectBoxServiceProvider.future);
+  await container.read(networkStateProvider.future);
   container.read(appThemeModeProvider);
 
   /// Auth
