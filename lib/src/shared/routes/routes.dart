@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_ecom/src/features/account/account.dart';
 import 'package:flutter_ecom/src/features/auth/auth.dart';
 import 'package:flutter_ecom/src/features/cart/cart.dart';
 import 'package:flutter_ecom/src/shared/shared.dart';
@@ -72,7 +73,7 @@ final routes = [
           parentNavigatorKey: _shellNavigatorKey,
           pageBuilder: (context, state) {
             return NoTransitionPage(
-              child: ProfileScreen.builder(context, state),
+              child: AccountsScreen.builder(context, state),
             );
           },
         ),

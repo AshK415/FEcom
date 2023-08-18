@@ -17,7 +17,7 @@ class AppStart {
     binding.addPostFrameCallback((_) {
       final Element? context = binding.rootElement;
       if (context != null) {
-        // for (final asset in assetList) {
+        // for (final asset in iconList) {
         //   precacheImage(
         //     AssetImage(asset),
         //     context,
