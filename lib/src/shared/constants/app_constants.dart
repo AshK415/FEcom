@@ -12,6 +12,8 @@ const String notificationIcon = 'assets/icons/bell_icon.svg';
 const String helpIcon = 'assets/icons/help_icon.svg';
 const String aboutIcon = 'assets/icons/about_icon.svg';
 const String backArrowIcon = 'assets/icons/back_arrow.svg';
+const String logOutIcon = 'assets/icons/logout_icon.svg';
+const String appIcon = 'assets/icons/app_icon.png';
 
 const iconList = [
   shopIcon,
@@ -28,4 +30,5 @@ const iconList = [
   helpIcon,
   aboutIcon,
   backArrowIcon,
+  logOutIcon,
 ];

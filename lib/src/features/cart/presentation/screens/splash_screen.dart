@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecom/src/features/common/common.dart';
+import 'package:flutter_ecom/src/shared/shared.dart';
 import 'package:go_router/go_router.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -8,15 +10,20 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
         child: Column(
           children: [
-            Text('ECom'),
-            SizedBox(
+            const Image(image: AssetImage(appIcon)),
+            20.0.hspace,
+            const Text(
+              'ECom',
+              style: TextStyle(color: Colors.white, fontSize: 24),
+            ),
+            const SizedBox(
               height: 16,
             ),
-            CircularProgressIndicator()
+            const CircularProgressIndicator()
           ],
         ),
       ),

@@ -13,7 +13,7 @@ part 'providers.g.dart';
 Future<SharedPreferences> sharedPreference(SharedPreferenceRef ref) =>
     SharedPreferences.getInstance();
 
-@riverpod
+@Riverpod(keepAlive: true)
 Future<ObjectBoxService> objectBoxService(ObjectBoxServiceRef ref) =>
     ObjectBoxService.init();
 

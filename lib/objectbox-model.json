@@ -4,66 +4,40 @@
   "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
   "entities": [
     {
-      "id": "1:7870443017538314294",
-      "lastPropertyId": "8:2979006794220928490",
-      "name": "UserEntity",
+      "id": "2:1675924508133577758",
+      "lastPropertyId": "1:5177682836059749525",
+      "name": "BaseEntity",
       "properties": [
         {
-          "id": "1:3944247001969473384",
+          "id": "1:5177682836059749525",
           "name": "id",
           "type": 6,
           "flags": 1
-        },
-        {
-          "id": "2:4310159079283637717",
-          "name": "uid",
-          "type": 9,
-          "flags": 8,
-          "indexId": "1:3832276723334259591"
-        },
-        {
-          "id": "3:7950090314505536535",
-          "name": "email",
-          "type": 9
-        },
-        {
-          "id": "4:5402341091524129759",
-          "name": "displayName",
-          "type": 9
-        },
-        {
-          "id": "5:2811790975650765113",
-          "name": "photoUrl",
-          "type": 9
-        },
-        {
-          "id": "6:2256782378936078965",
-          "name": "phoneNumber",
-          "type": 9
-        },
-        {
-          "id": "7:6216213423542477443",
-          "name": "createdAt",
-          "type": 6
-        },
-        {
-          "id": "8:2979006794220928490",
-          "name": "updatedAt",
-          "type": 6
         }
       ],
       "relations": []
     }
   ],
-  "lastEntityId": "1:7870443017538314294",
+  "lastEntityId": "2:1675924508133577758",
   "lastIndexId": "1:3832276723334259591",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
   "modelVersion": 5,
   "modelVersionParserMinimum": 5,
-  "retiredEntityUids": [],
+  "retiredEntityUids": [
+    7870443017538314294
+  ],
   "retiredIndexUids": [],
-  "retiredPropertyUids": [],
+  "retiredPropertyUids": [
+    3944247001969473384,
+    4310159079283637717,
+    7950090314505536535,
+    5402341091524129759,
+    2811790975650765113,
+    2256782378936078965,
+    6216213423542477443,
+    2979006794220928490
+  ],
   "retiredRelationUids": [],
   "version": 1
 }

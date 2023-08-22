@@ -1,3 +1,3 @@
 export './entities/entities.dart';
-export './repositories/objectbox_repository.dart';
+export './repositories/repositories.dart';
 export './providers/providers.dart';

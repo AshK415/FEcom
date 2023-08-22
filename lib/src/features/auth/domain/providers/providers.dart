@@ -1,4 +1,5 @@
 import 'package:flutter_ecom/src/features/auth/auth.dart';
+import 'package:flutter_ecom/src/features/common/common.dart';
 import 'package:flutter_ecom/src/shared/shared.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -6,8 +7,10 @@ part 'providers.g.dart';
 
 @riverpod
 AuthRemoteDataSource auth(AuthRef ref) => AuthRemoteDataSourceImpl(
-    firebaseAuth: ref.watch(firebaseAuthProvider),
-    firestore: ref.watch(firestoreProvider));
+      firebaseAuth: ref.watch(firebaseAuthProvider),
+      firestore: ref.watch(firestoreProvider),
+      userRepository: ref.watch(userRepositoryProvider),
+    );
 
 @riverpod
 AuthRepository authRepository(AuthRepositoryRef ref) =>

@@ -13,7 +13,7 @@ final routes = [
   GoRoute(
     path: RoutesLocation.splash,
     parentNavigatorKey: navigationKey,
-    builder: (context, state) => ShopScreen.builder(context, state),
+    builder: (context, state) => SplashScreen.builder(context, state),
   ),
   GoRoute(
     path: RoutesLocation.auth,

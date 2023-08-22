@@ -1,7 +1,11 @@
 import 'package:flutter_ecom/src/features/common/domain/domain.dart';
+import 'package:flutter_ecom/src/shared/shared.dart';
 import 'package:objectbox/objectbox.dart';
 
 class ObjectBoxRepositoryImpl implements ObjectBoxRepository {
+  final ObjectBoxService objectBoxService;
+
+  const ObjectBoxRepositoryImpl({required this.objectBoxService});
   @override
   Future<int> getCount<T>(Box<T> box) async {
     return box.count();
@@ -42,5 +46,10 @@ class ObjectBoxRepositoryImpl implements ObjectBoxRepository {
   @override
   Future<int> saveObjectAndGetId<T>(Box<T> box, T object) async {
     return box.putAsync(object);
+  }
+
+  @override
+  Box<BaseEntity> getBoxByName(String name) {
+    return objectBoxService.userBox;
   }
 }

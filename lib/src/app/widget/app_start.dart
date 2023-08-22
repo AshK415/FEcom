@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_ecom/firebase_options.dart';
 import 'package:flutter_ecom/src/shared/shared.dart';
@@ -26,6 +27,9 @@ class AppStart {
       }
       binding.allowFirstFrame();
     });
+
+    SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(statusBarColor: Color(0x00FFFFFF)));
 
     final container = ProviderContainer(
       overrides: [],
