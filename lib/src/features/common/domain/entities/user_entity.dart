@@ -1,4 +1,3 @@
-import 'package:flutter_ecom/src/features/common/domain/entities/base_entity.dart';
 import 'package:objectbox/objectbox.dart';
 
 // @Entity()
@@ -25,8 +24,10 @@ import 'package:objectbox/objectbox.dart';
 //       this.id = 0});
 // }
 
-class UserEntity extends BaseEntity {
-  int iid;
+@Entity()
+class UserEntity {
+  @Id()
+  int id;
   @Index(type: IndexType.value)
   String uid;
   String email;
@@ -44,6 +45,5 @@ class UserEntity extends BaseEntity {
       this.phoneNumber,
       this.createdAt,
       required this.updatedAt,
-      this.iid = 0})
-      : super(id: iid);
+      this.id = 0});
 }

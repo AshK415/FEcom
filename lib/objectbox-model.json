@@ -16,10 +16,61 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "3:4027638493447406536",
+      "lastPropertyId": "8:5139275882775251441",
+      "name": "UserEntity",
+      "properties": [
+        {
+          "id": "1:3666080659353448792",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:9147927772842564061",
+          "name": "uid",
+          "type": 9,
+          "flags": 8,
+          "indexId": "2:5354938638040748233"
+        },
+        {
+          "id": "3:425449480287522730",
+          "name": "email",
+          "type": 9
+        },
+        {
+          "id": "4:8442225540671945677",
+          "name": "displayName",
+          "type": 9
+        },
+        {
+          "id": "5:6519155478040773168",
+          "name": "photoUrl",
+          "type": 9
+        },
+        {
+          "id": "6:6460893455889214144",
+          "name": "phoneNumber",
+          "type": 9
+        },
+        {
+          "id": "7:4594489724353099316",
+          "name": "createdAt",
+          "type": 6
+        },
+        {
+          "id": "8:5139275882775251441",
+          "name": "updatedAt",
+          "type": 6
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "2:1675924508133577758",
-  "lastIndexId": "1:3832276723334259591",
+  "lastEntityId": "3:4027638493447406536",
+  "lastIndexId": "2:5354938638040748233",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
   "modelVersion": 5,

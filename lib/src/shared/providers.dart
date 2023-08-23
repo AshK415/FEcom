@@ -23,6 +23,9 @@ FirebaseAuth firebaseAuth(FirebaseAuthRef ref) => FirebaseAuth.instance;
 @Riverpod(keepAlive: true)
 FirebaseFirestore firestore(FirestoreRef ref) => FirebaseFirestore.instance;
 
+@riverpod
+UserService userService(UserServiceRef ref) => UserService();
+
 // @Riverpod(keepAlive: true)
 // Stream<ConnectivityResult> networkState(NetworkStateRef ref) =>
 //     Connectivity().onConnectivityChanged;

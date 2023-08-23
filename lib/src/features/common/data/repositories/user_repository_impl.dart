@@ -15,8 +15,12 @@ class UserRepositoryImpl implements UserRepository {
   }
 
   @override
-  FutureOr<UserEntity?> getCurrentUser(int id) async {
-    return _userBox.get(id);
+  Future<UserEntity?> getCurrentUser({int? id}) async {
+    final data = await _userBox.getAllAsync();
+    if (data.isNotEmpty) {
+      return data.first;
+    }
+    return null;
   }
 
   @override

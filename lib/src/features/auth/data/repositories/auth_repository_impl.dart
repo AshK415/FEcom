@@ -27,6 +27,6 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   Future<void> signOut() async {
-    return await authRemoteDataSource.googleSignOut();
+    return authRemoteDataSource.googleSignOut(0);
   }
 }

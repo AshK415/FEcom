@@ -5,25 +5,35 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_ecom/firebase_options.dart';
 import 'package:flutter_ecom/src/shared/shared.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 @immutable
 class AppStart {
   const AppStart._();
   static Future<ProviderContainer> init() async {
     final binding = WidgetsFlutterBinding.ensureInitialized();
+
+    FlutterNativeSplash.preserve(widgetsBinding: binding);
     // Cache images in assets folder via using the Flutter Engine binding
     // lifecycle.
     binding.deferFirstFrame();
     binding.addPostFrameCallback((_) {
       final Element? context = binding.rootElement;
       if (context != null) {
-        // for (final asset in iconList) {
-        //   precacheImage(
-        //     AssetImage(asset),
-        //     context,
-        //   );
-        // }
+        for (final asset in iconList) {
+          final ff = asset.split('.');
+          if (ff[1] == 'svg') {
+            final ld = SvgAssetLoader(asset);
+            svg.cache.putIfAbsent(ld.cacheKey(null), () => ld.loadBytes(null));
+          } else {
+            precacheImage(
+              AssetImage(asset),
+              context,
+            );
+          }
+        }
       }
       binding.allowFirstFrame();
     });
@@ -69,6 +79,7 @@ class AppStart {
       }
       return true;
     };
+    FlutterNativeSplash.remove();
     return container;
   }
 }

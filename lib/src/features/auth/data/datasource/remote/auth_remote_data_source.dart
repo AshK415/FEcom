@@ -8,7 +8,7 @@ import '../../models/auth_result.dart';
 
 abstract class AuthRemoteDataSource {
   Future<AuthResult> googleSignIn();
-  Future<void> googleSignOut();
+  Future<void> googleSignOut(int id);
   Stream<User?> authStateChanges();
 }
 
@@ -68,8 +68,9 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   }
 
   @override
-  Future<void> googleSignOut() async {
+  Future<void> googleSignOut(int id) async {
     await firebaseAuth.signOut();
+    //userRepository.deleteUser(id);
     await GoogleSignIn().signOut();
   }
 

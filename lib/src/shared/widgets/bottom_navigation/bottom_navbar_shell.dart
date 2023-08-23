@@ -1,5 +1,6 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ecom/src/features/common/common.dart';
 import 'package:flutter_ecom/src/shared/routes/routes_location.dart';
 import 'package:flutter_ecom/src/shared/shared.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -47,7 +48,12 @@ class BottomNavBarShell extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final currentIdx = useState(_getIdx(currentRoute));
-
+    final userRep = ref.watch(userRepositoryProvider);
+    final userServ = ref.watch(userServiceProvider);
+    useEffect(() {
+      userServ.getCurrentUser(userRep);
+      return;
+    }, [userServ]);
     ref.listen(networkStateProvider, (previous, next) {
       next.whenOrNull(data: (res) {
         debugPrint('Network State: ${res.name}');

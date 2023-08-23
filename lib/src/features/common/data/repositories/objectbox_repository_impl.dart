@@ -49,7 +49,7 @@ class ObjectBoxRepositoryImpl implements ObjectBoxRepository {
   }
 
   @override
-  Box<BaseEntity> getBoxByName(String name) {
-    return objectBoxService.userBox;
+  Box<T> getBoxByName<T>(String name) {
+    return objectBoxService.userBox as Box<T>;
   }
 }

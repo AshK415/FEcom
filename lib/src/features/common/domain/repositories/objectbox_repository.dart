@@ -1,4 +1,3 @@
-import 'package:flutter_ecom/src/features/common/domain/domain.dart';
 import 'package:objectbox/objectbox.dart';
 
 abstract class ObjectBoxRepository {
@@ -10,5 +9,5 @@ abstract class ObjectBoxRepository {
   Future<T?> getObjectByQuery<T>(Box<T> box, Condition<T>? qc);
   Future<T?> getObjectByKey<T>(Box<T> box, String key);
   Future<int> getCount<T>(Box<T> box);
-  Box<BaseEntity> getBoxByName(String name);
+  Box<T> getBoxByName<T>(String name);
 }
