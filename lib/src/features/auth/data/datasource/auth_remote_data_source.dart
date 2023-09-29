@@ -4,7 +4,7 @@ import 'package:flutter_ecom/src/features/common/common.dart';
 import 'package:flutter_ecom/src/shared/shared.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-import '../../models/auth_result.dart';
+import '../models/auth_result.dart';
 
 abstract class AuthRemoteDataSource {
   Future<AuthResult> googleSignIn();

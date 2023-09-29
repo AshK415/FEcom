@@ -89,67 +89,72 @@ class BottomNavBarShell extends HookConsumerWidget {
         }
         return true;
       },
-      child: Scaffold(
-        resizeToAvoidBottomInset: true,
-        body: Stack(
-          children: [
-            child,
-          ],
+      child: GestureDetector(
+        onTap: () {
+          FocusManager.instance.primaryFocus?.unfocus();
+        },
+        child: Scaffold(
+          resizeToAvoidBottomInset: true,
+          body: Stack(
+            children: [
+              child,
+            ],
+          ),
+          bottomNavigationBar: NavigationBar(
+              elevation: 4,
+              selectedIndex: currentIdx.value,
+              onDestinationSelected: (value) {
+                currentIdx.value = value;
+                context.go(_getPath(value));
+              },
+              destinations: [
+                NavigationDestination(
+                  icon: SvgPicture.asset(
+                    shopIcon,
+                    colorFilter: ColorFilter.mode(
+                        _getIconColor(_isItemSelected('/shop'), context),
+                        BlendMode.srcIn),
+                  ),
+                  label: 'Shop',
+                ),
+                NavigationDestination(
+                  icon: SvgPicture.asset(
+                    exploreIcon,
+                    colorFilter: ColorFilter.mode(
+                        _getIconColor(_isItemSelected('/explore'), context),
+                        BlendMode.srcIn),
+                  ),
+                  label: 'Explore',
+                ),
+                NavigationDestination(
+                  icon: SvgPicture.asset(
+                    cartIcon,
+                    colorFilter: ColorFilter.mode(
+                        _getIconColor(_isItemSelected('/cart'), context),
+                        BlendMode.srcIn),
+                  ),
+                  label: 'Cart',
+                ),
+                NavigationDestination(
+                  icon: SvgPicture.asset(
+                    favoriteIcon,
+                    colorFilter: ColorFilter.mode(
+                        _getIconColor(_isItemSelected('/favourite'), context),
+                        BlendMode.srcIn),
+                  ),
+                  label: 'Favourite',
+                ),
+                NavigationDestination(
+                  icon: SvgPicture.asset(
+                    profileIcon,
+                    colorFilter: ColorFilter.mode(
+                        _getIconColor(_isItemSelected('/profile'), context),
+                        BlendMode.srcIn),
+                  ),
+                  label: 'Account',
+                ),
+              ]),
         ),
-        bottomNavigationBar: NavigationBar(
-            elevation: 4,
-            selectedIndex: currentIdx.value,
-            onDestinationSelected: (value) {
-              currentIdx.value = value;
-              context.go(_getPath(value));
-            },
-            destinations: [
-              NavigationDestination(
-                icon: SvgPicture.asset(
-                  shopIcon,
-                  colorFilter: ColorFilter.mode(
-                      _getIconColor(_isItemSelected('/shop'), context),
-                      BlendMode.srcIn),
-                ),
-                label: 'Shop',
-              ),
-              NavigationDestination(
-                icon: SvgPicture.asset(
-                  exploreIcon,
-                  colorFilter: ColorFilter.mode(
-                      _getIconColor(_isItemSelected('/explore'), context),
-                      BlendMode.srcIn),
-                ),
-                label: 'Explore',
-              ),
-              NavigationDestination(
-                icon: SvgPicture.asset(
-                  cartIcon,
-                  colorFilter: ColorFilter.mode(
-                      _getIconColor(_isItemSelected('/cart'), context),
-                      BlendMode.srcIn),
-                ),
-                label: 'Cart',
-              ),
-              NavigationDestination(
-                icon: SvgPicture.asset(
-                  favoriteIcon,
-                  colorFilter: ColorFilter.mode(
-                      _getIconColor(_isItemSelected('/favourite'), context),
-                      BlendMode.srcIn),
-                ),
-                label: 'Favourite',
-              ),
-              NavigationDestination(
-                icon: SvgPicture.asset(
-                  profileIcon,
-                  colorFilter: ColorFilter.mode(
-                      _getIconColor(_isItemSelected('/profile'), context),
-                      BlendMode.srcIn),
-                ),
-                label: 'Account',
-              ),
-            ]),
       ),
     );
   }
